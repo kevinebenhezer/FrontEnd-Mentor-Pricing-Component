@@ -35,7 +35,7 @@ body {
 }
 
 .top-bg-image {
-	background-image: url(./images/bg-top.svg);
+	background-image: url(bg-top.svg);
 	background-repeat: no-repeat;
 	background-size: 300px;
 	background-position: right 0 top 0;
@@ -315,7 +315,7 @@ hr {
 }
 
 .bottom-bg-image {
-	background-image: url(./images/bg-bottom.svg);
+	background-image: url(bg-bottom.svg);
 	background-repeat: no-repeat;
 	background-size: 300px;
 	background-position: left 0 bottom 0;
