@@ -1,0 +1,323 @@
+:root {
+	/* Colors */
+	--clr-gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+
+	--clr-veryLighGrayishBlue: hsl(240, 78%, 98%);
+	--clr-lightGrayishBlue: hsl(234, 14%, 74%);
+	--clr-grayishBlue: hsl(233, 13%, 49%);
+	--clr-darkGrayishBlue: hsl(232, 13%, 33%);
+
+	/* Fonts */
+	--ff-montserrat: "Montserrat", sans-serif;
+	--fs-normal: 15px;
+	--fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: var(--ff-montserrat);
+	font-size: var(--fs-normal);
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	background-color: var(--clr-veryLighGrayishBlue);
+}
+
+.top-bg-image {
+	background-image: url(./images/bg-top.svg);
+	background-repeat: no-repeat;
+	background-size: 300px;
+	background-position: right 0 top 0;
+	background-attachment: fixed;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header {
+	display: inline-flex;
+	flex-direction: column;
+	width: 300px;
+	text-align: center;
+	line-height: 1rem;
+	margin-top: -1.5rem;
+	margin-bottom: 3.5rem;
+}
+
+@media screen and (max-width: 375px) {
+	header {
+		margin-top: 1rem;
+	}
+}
+
+header > h2 {
+	font-size: 2rem;
+	color: var(--clr-grayishBlue);
+}
+
+header > .toggle-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-block: 1rem;
+}
+
+header p {
+	margin-inline: 1rem;
+	margin-block: 0.5rem;
+	font-weight: var(--fw-bold);
+	color: var(--clr-lightGrayishBlue);
+}
+
+/* Box around slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: hsl(237, 63%, 64%);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 1.7rem;
+	width: 25px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider::after {
+	background-color: hsl(237, 63%, 64%);
+}
+
+input:checked + .slider {
+	background-color: hsl(237, 63%, 64%);
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+main .card {
+	display: inline;
+	height: auto;
+	width: 800px;
+}
+
+@media screen and (max-width: 375px) {
+	main .card {
+		width: 360px;
+		height: auto;
+	}
+}
+
+main .card-body {
+	display: flex;
+	height: 420px;
+	padding: 1rem;
+	text-align: center;
+	line-height: 1.5rem;
+	border-radius: 1rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	background-color: white;
+}
+
+@media screen and (max-width: 375px) {
+	main .card-body {
+		display: block;
+		height: auto;
+		box-shadow: none;
+		background-color: var(--clr-veryLighGrayishBlue);
+	}
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+hr {
+	width: 80%;
+	opacity: 0.3;
+}
+
+.card-body .basic {
+	min-width: 300px;
+	height: auto;
+	margin-top: -2rem;
+	padding-block: 1.5rem;
+	font-weight: var(--fw-bold);
+	color: var(--clr-grayishBlue);
+}
+
+@media screen and (max-width: 375px) {
+	.card-body .basic {
+		background-color: white;
+		border-radius: 1rem;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+}
+
+.card-body .basic h1 {
+	color: var(--clr-darkGrayishBlue);
+}
+
+.card-body .basic button {
+	background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	border: 1px solid white;
+	width: 80%;
+	height: 2.5rem;
+	letter-spacing: 2px;
+	border-radius: 5px;
+	color: white;
+	text-transform: uppercase;
+	font-weight: var(--fw-bold);
+	font-size: 11px;
+}
+
+.card-body .basic button:hover {
+	cursor: pointer;
+	color: hsl(237, 63%, 64%);
+	border-color: hsl(237, 63%, 64%);
+	transition: 0.4s;
+	background: linear-gradient(90deg, white, white);
+}
+
+.card-body .professional {
+	min-width: 300px;
+	height: auto;
+	font-weight: var(--fw-bold);
+	margin-block: -2rem;
+	padding-block: 1.5rem;
+	background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	border-radius: 1rem;
+	color: white;
+}
+
+@media screen and (max-width: 375px) {
+	.card-body .professional {
+		margin-block: 2rem;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+}
+
+.card-body .professional button {
+	background-color: white;
+	border: 1px solid white;
+	width: 80%;
+	height: 2.5rem;
+	border-radius: 5px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: var(--fw-bold);
+	font-size: 11px;
+	color: hsl(237, 63%, 64%);
+}
+
+.card-body .professional button:hover {
+	cursor: pointer;
+	color: white;
+	border-color: 1px solid white;
+	transition: 0.4s;
+	background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.card-body .master {
+	min-width: 300px;
+	height: auto;
+	margin-top: -2rem;
+	padding-block: 1.5rem;
+	font-weight: var(--fw-bold);
+	color: var(--clr-grayishBlue);
+}
+
+@media screen and (max-width: 375px) {
+	.card-body .master {
+		background-color: white;
+		margin-top: 2rem;
+		margin-bottom: -1rem;
+		border-radius: 1rem;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+}
+
+.card-body .master h1 {
+	color: var(--clr-darkGrayishBlue);
+}
+
+.card-body .master button {
+	background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	border: 1px solid white;
+	width: 80%;
+	height: 2.5rem;
+	letter-spacing: 2px;
+	border-radius: 5px;
+	color: white;
+	text-transform: uppercase;
+	font-weight: var(--fw-bold);
+	font-size: 11px;
+}
+
+.card-body .master button:hover {
+	cursor: pointer;
+	color: hsl(237, 63%, 64%);
+	border-color: hsl(237, 63%, 64%);
+	background: linear-gradient(90deg, white, white);
+	transition: 0.4s;
+}
+
+.bottom-bg-image {
+	background-image: url(./images/bg-bottom.svg);
+	background-repeat: no-repeat;
+	background-size: 300px;
+	background-position: left 0 bottom 0;
+	background-attachment: fixed;
+}
